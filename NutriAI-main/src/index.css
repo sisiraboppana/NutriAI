@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 190 40% 92%;
+    --foreground: 200 30% 15%;
+
+    --teal: 178 48% 42%;
+    --teal-deep: 184 60% 32%;
+    --blue-soft: 215 55% 60%;
+    --apple-red: 4 78% 52%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 30% 15%;
+
+    --primary: 184 60% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 40% 96%;
+    --secondary-foreground: 184 60% 32%;
+    --muted: 190 30% 92%;
+    --muted-foreground: 200 15% 40%;
+    --accent: 178 48% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 190 25% 85%;
+    --input: 190 25% 88%;
+    --ring: 184 60% 32%;
+    --radius: 1rem;
+
+    --gradient-app: linear-gradient(180deg, hsl(170 42% 52%) 0%, hsl(190 50% 50%) 45%, hsl(215 55% 60%) 100%);
+    --shadow-tile: 0 8px 24px -8px hsl(200 40% 20% / 0.25);
+    --shadow-banner: 0 4px 14px -6px hsl(200 40% 20% / 0.18);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply text-foreground;
+    background: var(--gradient-app);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  #root { min-height: 100vh; }
+}
+
+@layer components {
+  .nutri-banner {
+    @apply bg-white py-4 px-6 text-center;
+    box-shadow: var(--shadow-banner);
+  }
+  .nutri-banner h1 {
+    font-family: 'Playfair Display', serif;
+    color: hsl(var(--teal-deep));
+    @apply text-3xl font-bold tracking-tight;
+  }
+  .nutri-tile {
+    @apply bg-white rounded-2xl flex flex-col items-center justify-center gap-3 p-6 transition-transform active:scale-95 hover:scale-[1.02];
+    box-shadow: var(--shadow-tile);
+    aspect-ratio: 1;
+  }
+  .nutri-tile-label {
+    font-family: 'Playfair Display', serif;
+    @apply text-lg text-foreground;
+  }
+  .nutri-card {
+    @apply bg-white/95 backdrop-blur rounded-2xl p-5;
+    box-shadow: var(--shadow-tile);
+  }
+  .wordmark {
+    font-family: 'Allura', cursive;
+    @apply text-white;
+    text-shadow: 0 2px 6px hsl(200 40% 20% / 0.25);
+  }
+  .quote-footer {
+    font-family: 'Allura', cursive;
+    @apply text-white text-center text-xl leading-snug px-4 pb-4;
+    text-shadow: 0 2px 6px hsl(200 40% 20% / 0.18);
+  }
+}
